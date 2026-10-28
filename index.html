@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  變體：工地，並把動效改為長時間使用的平靜設定（amber / warm / wide / hatch / standard / calm）
+  主視覺：左側進入各頁，右側首頁是公告、安全警惕、天氣和近期維修
+  頁面類型：首頁是工作台，設備總覽是控制台，機械和維修的詳情是閱讀頁，列表和表單是工作頁
+-->
+<html lang="zh-Hant" data-ef-variant="site" data-ef-accent="amber" data-ef-paper="warm" data-ef-cut="wide" data-ef-ground="hatch" data-ef-density="standard" data-ef-motion="calm">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>機械部管理系統</title>
+    <script>
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    </script>
+    <script src="assets/variant.js"></script>
+    <link rel="stylesheet" href="node_modules/@fontsource-variable/saira/standard.css" />
+    <link rel="stylesheet" href="node_modules/@fontsource-variable/noto-sans-sc/wght.css" />
+    <link rel="stylesheet" href="assets/endfield.css" />
+    <link rel="stylesheet" href="css/app.css?v=41" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1a17" media="(prefers-color-scheme: dark)" />
+  </head>
+  <body class="ef ef-contours ef-has-tabbar">
+    <div class="ef-tri" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="shell">
+      <nav class="side" id="side" aria-label="分區"></nav>
+      <div class="workspace">
+        <header class="topbar" id="cmd"></header>
+        <main id="app"></main>
+      </div>
+    </div>
+    <nav class="ef-tabbar" id="tab" aria-label="主要"></nav>
+    <dialog id="sheet" class="ef-drawer"></dialog>
+    <dialog id="ask" class="ef-dialog"></dialog>
+    <dialog id="preview" class="ef-dialog"></dialog>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script type="module" src="js/app.js?v=44"></script>
+  </body>
+</html>
